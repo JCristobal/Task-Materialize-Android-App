@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cloud</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_main_button_text">A big button comes with a big responsability</string>
+</resources>
