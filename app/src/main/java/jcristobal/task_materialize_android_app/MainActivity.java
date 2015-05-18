@@ -3,11 +3,15 @@ package jcristobal.task_materialize_android_app;
 import android.graphics.Outline;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import android.view.animation.AnimationUtils;
 
 import java.util.List;
 
@@ -17,6 +21,7 @@ public class MainActivity extends ActionBarActivity
     implements GetMemesCallback {
 
         private ListView mMemesListView;
+        //private RecyclerView mMemesListView;
         private ProgressBar mLoadingProgressBar;
 
         @Override
@@ -26,15 +31,26 @@ public class MainActivity extends ActionBarActivity
             setContentView(R.layout.activity_main);
 
             mMemesListView      = (ListView) findViewById(R.id.activity_main_memes_listview);
+            //mMemesListView      = (RecyclerView) findViewById(R.id.activity_main_memes_reciclerView);
             mLoadingProgressBar = (ProgressBar) findViewById(R.id.activity_main_loading_indicator);
-/*
-            // Fab button
+
+            // // Fab button
             int fabSize = getResources().getDimensionPixelSize(R.dimen.fab_size);
-            Outline fabOutline = new Outline();
-            fabOutline.setOval(0, 0, fabSize, fabSize);
+            //Outline fabOutline = new Outline();
+            //fabOutline.setOval(0, 0, fabSize, fabSize);
 
             View fabView = findViewById(R.id.fab_add);
-            //fabView.setOutline(fabOutline);
+            // //fabView.setOutline(fabOutline);
+
+            ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    // Or read size directly from the view's width/height
+                    int size = getResources().getDimensionPixelSize(R.dimen.fab_size);
+                    outline.setOval(0, 0, size, size);
+                }
+            };
+            fabView.setOutlineProvider(viewOutlineProvider);
 
 
             ImageButton btn_fab = (ImageButton) findViewById(R.id.fab_add);
@@ -46,8 +62,6 @@ public class MainActivity extends ActionBarActivity
                     toast1.show();
                 }
             });
-
-*/
 
         }
 
@@ -71,7 +85,7 @@ public class MainActivity extends ActionBarActivity
 
         MemeAdapter memesAdapter = new MemeAdapter(this, memesList);
 
-        mMemesListView.setAdapter(memesAdapter);
+        mMemesListView.setAdapter(memesAdapter);      //   <-----
     }
 
     @Override

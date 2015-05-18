@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#e8f5e9"
+    >
 
     <Button
         android:layout_width="match_parent"
@@ -16,20 +18,21 @@
         android:onClick="startGetMemesRequest"
         />
 
-    <ListView
-        android:id="@+id/activity_main_memes_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-<!--
-        <android.support.v7.widget.RecyclerView
+        <ListView
             android:id="@+id/activity_main_memes_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            tools:listitem="@layout/item_meme"
             />
-    -->
+
+<!--
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/activity_main_memes_reciclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/item_meme"
+                />
+-->
     <ProgressBar
         android:id="@+id/activity_main_loading_indicator"
         android:layout_width="55dp"
@@ -38,7 +41,7 @@
         android:visibility="gone"
         style="?android:attr/progressBarStyleLarge"
         />
-<!--
+
     <ImageButton
         android:id="@+id/fab_add"
         android:layout_alignParentRight="true"
@@ -50,8 +53,8 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/ripple"
         android:stateListAnimator="@anim/anim"
-        android:src="@drawable/ic_action_add"
+        android:src="@drawable/ic_action_action_android"
         android:elevation="1dp"
         />
--->
+
 </RelativeLayout>

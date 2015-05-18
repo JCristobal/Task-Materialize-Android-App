@@ -1,11 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme.       -->
-    <style name="AppTheme"  parent="Theme.AppCompat.Light.DarkActionBar" >
-        <!-- Customize your theme here.
-        <item name="android:background">@drawable/ripple_deletebar</item> -->
+    <!-- Base application theme. -->
+    <style name="AppTheme0" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- <item name="android:background">@drawable/ripple_deletebar</item> -->
     </style>
 
+    <!-- Custom application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here.   #3f51b5  #303f9f  #ff4081  -->
 
+        <item name="colorPrimary">#4caf50</item>
+        <item name="colorPrimaryDark">#388e3c</item>
+        <item name="colorAccent" >#ff9100</item>
+        <!-- El color de fondo,#e8f5e9, se define en los layout de activity_main e item_meme  -->
 
+    </style>
 </resources>
