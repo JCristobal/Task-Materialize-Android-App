@@ -7,4 +7,6 @@ public interface GetMemesCallback {
         public void onMemesResult (List<MemeEntity> memesList);
 
         public void onMemesError ();
+
+
     }
